@@ -1,11 +1,12 @@
 package auto;
 
 import arc.Events.*;
-import arc.util.CommandHandler.*;
+import arc.util.*;
+import arc.util.CommandHandler;
 import arc.util.Log;
-import arc.util.Strings;
+import arc.util.Strings.*;
 import mindustry.*;
-import mindsutry.Vars.*;
+import mindsutry.Vars;
 import mindustry.game.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
@@ -41,7 +42,7 @@ public class AutoPlugin extends Plugin{
     }
     @Override
     public void registerClientCommands(CommandHandler handler) {
-        CommandHandler.register("pause", "<on/off>", "Pause/Unpause the game.", (arg) -> {
+        CommandHandler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg) -> {
             if (arg.length == 0) {
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' needed");
             }
