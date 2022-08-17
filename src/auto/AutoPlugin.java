@@ -56,6 +56,6 @@ public class AutoPlugin extends Plugin{
                     }
                 });
             }
-        });
+        //});
     } 
 }
