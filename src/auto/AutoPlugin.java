@@ -16,7 +16,7 @@ public class AutoPlugin extends Plugin{
 
     @Override
     public void init(){
-        Events.on(EventType.WorldLoadEvent.class, event -> {
+        Events.on(EventType.WorldLoadEvent, event -> {
             if (playerCount == 0 && Vars.state.serverPaused == false) {
                 String message = Strings.format("[Auto-Pause] ON");
                 Vars.state.serverPaused = true;
@@ -38,10 +38,10 @@ public class AutoPlugin extends Plugin{
         });
     }
     @Override
-    public void registerClientCommands(CommandHandler handler) {
-        handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game", (arg, player) -> {
+    public void registerClientCommands(CommandHandler.Command register) {
+        CommandHandler.register("pause", "<on/off>", "Pause/Unpause the game.", (arg) -> {
             if (arg.length == 0) {
-                player.sendMessage("[scarlet]Error: /pause 'on'/'off'");
+                player.sendMessage("[scarlet]Error: Argument 'on' or 'off' needed");
             }
             if (arg[0].equals("on")) {
                 Vars.state.serverPaused = true;
