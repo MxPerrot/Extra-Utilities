@@ -16,7 +16,7 @@ import mindustry.net.Administration.*;
 import static mindustry.Vars.*;
 import static arc.util.Log.info;
 
-public class AutoPlugin extends Plugin{
+public class Plugin extends Plugin{
     private int playerCount = 0;
 
     @Override
