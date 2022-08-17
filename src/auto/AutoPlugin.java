@@ -1,4 +1,4 @@
-package example;
+package auto;
 
 import arc.*;
 import arc.util.*;
@@ -10,9 +10,8 @@ import mindustry.mod.*;
 import mindustry.net.Administration.*;
 import mindustry.world.blocks.storage.*;
 
-public class ExamplePlugin extends Plugin{
+public class AutoPlugin extends Plugin{
 
-    //called when game initializes
     @Override
     public void init(){
         //listen for a block selection event
