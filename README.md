@@ -1,24 +1,10 @@
-### Setup
+A little plugin that I made for a private server but feel free to use it.
 
-Clone this repository first.
-To edit the plugin display name and other data, take a look at `plugin.json`.
-Edit the name of the project itself by going into `settings.gradle`.
-
-### Basic Usage
-
-See `src/example/ExamplePlugin.java` for some basic commands and event handlers.  
-Every main plugin class must extend `Plugin`. Make sure that `plugin.json` points to the correct main plugin class.
-
-Please note that the plugin system is in beta, and as such is subject to changes.
-
-### Building a Jar
-
-`gradlew jar` / `./gradlew jar`
-
-Output jar should be in `build/libs`.
+For now you can automatically pause the game when no one is connected and do `/pause on/off` in game.
 
 
-### Installing
+### Downloading
 
-Simply place the output jar from the step above in your server's `config/mods` directory and restart the server.
-List your currently installed plugins/mods by running the `mods` command.
+Go to the [Action](https://github.com/JojoFR1/Auto-Pause/actions) Tab and download the latest checked version.
+
+When downloaded, unzip it and place the plugin in your server folder `(SERVER)/configs/mods`.
