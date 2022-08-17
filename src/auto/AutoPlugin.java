@@ -12,8 +12,8 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.core.*;
-import mindustry.core.GameState.*;
 import mindustry.net.Administration.*;
+import static mindustry.Vars.*;
 import static arc.util.Log.info;
 
 public class AutoPlugin extends Plugin{
