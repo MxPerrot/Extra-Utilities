@@ -2,13 +2,13 @@ package auto;
 
 import arc.Events;
 import arc.util.*;
-import arc.util.CommandHandler;
-import arc.util.Log;
+import arc.util.CommandHandler.*;
+import arc.util.Log.*;
 import arc.util.Strings;
 import mindustry.*;
 import mindustry.core.*;
 import mindustry.core.GameState.*;
-import mindustry.game.EventType;
+import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.net.Administration;
@@ -42,15 +42,18 @@ public class AutoPlugin extends Plugin{
     }
     @Override
     public void registerClientCommands(CommandHandler handler) {
-        handler.Player<register>("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
+        handler.Player<register>("pause", "<on/off>", "Pause/Unpause the game", (arg, player) -> {
             if (arg.length == 0) {
                 player.sendMessage("[scarlet]Error: /pause 'on'/'off'");
             }
             if (arg[0].equals("on")) {
                 Vars.state.serverPaused = true;
+                String message = Strings.format("[Pause] ON");
             }
             if (arg[0].equals("off")) {
                 Vars.state.serverPaused = false;
+                String message = Strings.format("[Pause] OFF");
+
             }
         });
     } 
