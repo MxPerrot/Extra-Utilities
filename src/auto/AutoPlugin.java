@@ -1,14 +1,11 @@
 package auto;
 
 import arc.Events;
-import arc.util.*;
-import arc.util.CommandHandler.*;
-import arc.util.Log.*;
+import arc.util.CommandHandler;
+import arc.util.Log;
 import arc.util.Strings;
 import mindustry.*;
-import mindustry.core.*;
-import mindustry.core.GameState.*;
-import mindustry.game.EventType.*;
+import mindustry.game.EventType;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.net.Administration;
