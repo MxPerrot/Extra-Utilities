@@ -44,7 +44,7 @@ public class AutoPlugin extends Plugin{
     }
     @Override
     public void registerClientCommands(CommandHandler handler) {
-        handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (args, player) -> {
+        handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
             if (arg.length == 0) {
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
             }
