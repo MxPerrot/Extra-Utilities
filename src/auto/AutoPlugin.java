@@ -1,6 +1,6 @@
 package auto;
 
-import arc.Events.*;
+import arc.Events;
 import arc.util.*;
 import arc.util.CommandHandler;
 import arc.util.Log;
