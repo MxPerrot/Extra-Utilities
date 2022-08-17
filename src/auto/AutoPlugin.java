@@ -39,22 +39,23 @@ public class AutoPlugin extends Plugin{
     }
     @Override
     public void registerClientCommands(CommandHandler handler) {
-        if(action.player == null) return true;
-        if(action.player.admin) {
-            handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game", (arg, player) -> {
-                if (arg.length == 0) {
-                    player.sendMessage("[scarlet]Error: /pause 'on'/'off'");
-                }
-                if (arg[0].equals("on")) {
-                    Vars.state.serverPaused = true;
-                    String message = Strings.format("[Pause] ON");
-                }
-                if (arg[0].equals("off")) {
-                    Vars.state.serverPaused = false;
-                    String message = Strings.format("[Pause] OFF");
-
-                }
-            });
-        }
+        Vars.netServer.admins.addActionFilter(action -> {
+            if(action.player == null) return true;
+            if(action.player.admin) {
+                handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game", (arg, player) -> {
+                    if (arg.length == 0) {
+                        player.sendMessage("[scarlet]Error: /pause 'on'/'off'");
+                    }
+                    if (arg[0].equals("on")) {
+                       Vars.state.serverPaused = true;
+                       String message = Strings.format("[Pause] ON");
+                    }
+                    if (arg[0].equals("off")) {
+                        Vars.state.serverPaused = false;
+                        String message = Strings.format("[Pause] OFF");
+                    }
+                });
+            }
+        });
     } 
 }
