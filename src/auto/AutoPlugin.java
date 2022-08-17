@@ -47,7 +47,7 @@ public class AutoPlugin extends Plugin{
     public void registerClientCommands(CommandHandler handler){
         handler.<Player>register("playtime", "Get your playtime on the server.", (arg, player) -> {
             player.sendMessage("You have", playtime, "playtime on this server");
-        }
+        });
     }
     private void save(){
         Core.settings.put("playtime", playtime);
