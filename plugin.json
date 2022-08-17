@@ -1,7 +1,7 @@
 {
   "name": "Auto Pause",
   "author": "Jojo",
-  "main": "pause.PausePlugin",
+  "main": "pause.Plugin",
   "description": "A plugin that automatically pause your game when no one is connected.",
-  "version": "0.1-beta"
+  "version": "0.1"
 }
