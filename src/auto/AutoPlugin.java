@@ -16,7 +16,7 @@ public class AutoPlugin extends Plugin{
 
     @Override
     public void init(){
-        Events.on(EventType.WorldLoadEvent, event -> {
+        Events.on(EventType.WorldLoadEvent.class, event -> {
             if (playerCount == 0 && Vars.state.serverPaused == false) {
                 String message = Strings.format("[Auto-Pause] ON");
                 Vars.state.serverPaused = true;
