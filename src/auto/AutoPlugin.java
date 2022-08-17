@@ -44,14 +44,14 @@ public class AutoPlugin extends Plugin{
     @Override
     public void registerClientCommands(CommandHandler handler) {
         handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (args, player) -> {
-            if (arg[0].length == 0) {
+            if (arg.length == 0) {
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
             }
-            if (arg[0].equals("on") && Vars.state.serverPaused == false) {
+            if (arg[0].equals("on")) {
                 Vars.state.serverPaused = true;
                 String message = Strings.format("[Pause] [green]ON");
             }
-            if (arg[0].equals("off") && Vars.state.ServerPaused == true) {
+            if (arg[0].equals("off")){
                 Vars.state.serverPaused = false;
                 String message = Strings.format("[Pause] [red]OFF");
             }
