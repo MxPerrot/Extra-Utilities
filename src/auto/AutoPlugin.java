@@ -7,7 +7,6 @@ import arc.util.CommandHandler;
 import arc.util.Log;
 import arc.util.Strings;
 import mindustry.*;
-import mindsutry.net.*;
 import mindustry.game.*;
 import mindustry.game.EventType.*;
 import mindustry.gen.*;
