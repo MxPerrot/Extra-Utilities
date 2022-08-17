@@ -39,9 +39,9 @@ public class AutoPlugin extends Plugin{
     }
     @Override
     public void registerClientCommands(CommandHandler handler) {
-        Vars.netServer.admins.addActionFilter(action -> {
-            if(action.player == null) return true;
-            if(action.player.admin) {
+        //Vars.netServer.admins.addActionFilter(action -> {
+            //if(action.player == null) return true;
+            //if(action.player.admin) {
                 handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game", (arg, player) -> {
                     if (arg.length == 0) {
                         player.sendMessage("[scarlet]Error: /pause 'on'/'off'");
