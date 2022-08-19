@@ -49,7 +49,7 @@ public class AutoPlugin extends Plugin{
     private int playerCount = 0;
 
     public AutoPlugin(){
-        Log.info("Auto-Pause plugin is loading...);
+        Log.info("Auto-Pause plugin is loading...");
     }
 
     public void init(){
