@@ -2,19 +2,48 @@ package auto;
 
 import arc.*;
 import arc.Events;
+import arc.Core;
+import arc.files.Fi;
+import arc.math.Mathf;
+import arc.struct.ObjectMap;
+import arc.struct.ObjectSet;
+import arc.struct.Seq;
 import arc.util.*;
 import arc.util.CommandHandler;
-import arc.util.Log;
 import arc.util.Strings;
+import arc.util.Log;
+import arc.util.Timer;
+
 import mindustry.*;
-import mindustry.game.*;
-import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.core.*;
+import mindustry.core.NetClient;
 import mindustry.net.Administration.*;
+import mindustry.content.Blocks;
+import mindustry.game.*;
+import mindustry.game.EventType;
+import mindustry.game.Gamemode;
+import mindustry.game.Team;
+import mindustry.gen.Call;
+import mindustry.gen.Groups;
+import mindustry.gen.Player;
+import mindustry.maps.Map;
+import mindustry.net.Packets.*;
+
 import static mindustry.Vars.*;
+import static mindustry.Vars.content;
+import static mindustry.Vars.maps;
+import static mindustry.Vars.netServer;
+import static mindustry.Vars.state;
+import static mindustry.Vars.world;
 import static arc.util.Log.info;
+
+import util.*;
+import data.*;
+import filter.*;
+import filter.FilterType.Reponses;
+
 
 public class AutoPlugin extends Plugin{
     private int playerCount = 0;
