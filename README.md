@@ -7,4 +7,4 @@ For now you can automatically pause the game when no one is connected and do `/p
 
 Go to the [Action](https://github.com/JojoFR1/Auto-Pause/actions) Tab and download the latest checked version.
 
-When downloaded, unzip it and place the plugin in your server folder `(SERVER)/configs/mods`.
+When downloaded, unzip it and place the plugin in your server folder `(SERVER)/config/mods`.
