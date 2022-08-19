@@ -19,6 +19,10 @@ import static arc.util.Log.info;
 public class AutoPlugin extends Plugin{
     private int playerCount = 0;
 
+    public AutoPlugin(){
+        Log.info("Auto-Pause plugin is loading...);
+}
+
     @Override
     public void init(){
         Events.on(EventType.WorldLoadEvent.class, event -> {
