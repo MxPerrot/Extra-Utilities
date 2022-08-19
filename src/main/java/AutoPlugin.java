@@ -39,11 +39,6 @@ import static mindustry.Vars.state;
 import static mindustry.Vars.world;
 import static arc.util.Log.info;
 
-import util.*;
-import data.*;
-import filter.*;
-import filter.FilterType.Reponses;
-
 
 public class AutoPlugin extends Plugin{
     private int playerCount = 0;
