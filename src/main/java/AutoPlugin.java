@@ -50,9 +50,8 @@ public class AutoPlugin extends Plugin{
 
     public AutoPlugin(){
         Log.info("Auto-Pause plugin is loading...);
-}
+    }
 
-    @Override
     public void init(){
         Events.on(EventType.WorldLoadEvent.class, event -> {
             if (playerCount == 0 && Vars.state.serverPaused == false) {
