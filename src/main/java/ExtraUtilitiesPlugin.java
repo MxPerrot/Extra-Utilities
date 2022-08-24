@@ -54,16 +54,16 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             if (arg[0].equals("on") && Vars.state.serverPaused == false) {
                 Vars.state.serverPaused = true;
                 Call.sendMessage("[Pause] [green]ON");
-                else {
-                    player.sendMessage("[scarlet]Server is already paused.");
-                }
+            }
+            else {
+                player.sendMessage("[scarlet]Server is already paused.");
             }
             if (arg[0].equals("off") && Vars.state.serverPaused == true) {
-                    Vars.state.serverPaused = false;
-                    Call.sendMessage("[Pause] [red]OFF");
-                else {
-                    player.sendMessage("[scarlet]Server is already unpaused.");
-                }
+                Vars.state.serverPaused = false;
+                Call.sendMessage("[Pause] [red]OFF");
+            }
+            else {
+                player.sendMessage("[scarlet]Server is already unpaused.");
             }
         });
     }
