@@ -13,7 +13,6 @@ import arc.util.CommandHandler;
 import arc.util.Strings;
 import arc.util.Log;
 import arc.util.Timer;
-
 import mindustry.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
@@ -30,7 +29,6 @@ import mindustry.gen.Groups;
 import mindustry.gen.Player;
 import mindustry.maps.Map;
 import mindustry.net.Packets.*;
-
 import static mindustry.Vars.*;
 import static mindustry.Vars.content;
 import static mindustry.Vars.maps;
@@ -76,7 +74,7 @@ public class AutoPlugin extends Plugin{
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
             }
             if (arg[0].equals("on")) {
-                if (Vars.state.ServerPaused == false {
+                if (Vars.state.ServerPaused == false) {
                     Vars.state.serverPaused = true;
                     String message = Strings.format("[Pause] [green]ON");
                 }
@@ -85,9 +83,9 @@ public class AutoPlugin extends Plugin{
                 }
             }
             if (arg[0].equals("off")){
-                if (Vars.state.ServerPaused == true {
+                if (Vars.state.ServerPaused == true) {
                     Vars.state.serverPaused = false;
-                    String message = Strings.format("[Pause] [red]OFF);
+                    String message = Strings.format("[Pause] [red]OFF");
                 }
                 else {
                     player.sendMessage("[scarlet]Server is already unpaused.");
