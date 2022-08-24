@@ -2,7 +2,7 @@
   "name": "extraUtilities",
   "displayName": "Extra-Utilities",
   "author": "Jojo",
-  "main": "ExtraUtilitiesPlugin",
+  "main": "java.ExtraUtilitiesPlugin",
   "description": "A plugin that does thing.",
   "version": "0.1 notworking"
 }
