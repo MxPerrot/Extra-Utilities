@@ -14,7 +14,7 @@ import mindustry.gen.Call;
 import mindustry.gen.Groups;
 import mindustry.gen.Player;
 import mindustry.net.Administration;
-import static mindustry.Vars.Player;
+import static mindustry.Vars.player;
 import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
@@ -61,7 +61,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
                 player.sendMessage("[scarlet]Server is already paused.");
             }
             if (arg[0].equals("off") && Vars.state.serverPaused == true) {
-                Vars.state.serverPaused = false;
+                state.serverPaused = false;
                 Call.sendMessage("[Pause] [red]OFF");
             }
             else {
