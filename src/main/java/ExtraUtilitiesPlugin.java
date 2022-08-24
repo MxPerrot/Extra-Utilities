@@ -14,8 +14,9 @@ import mindustry.gen.Groups;
 import mindustry.gen.Player;
 import mindustry.net.Administration;
 import static mindustry.Vars.Player;
-import static mindustry.Vars.NetServer;
-import static mindustry.Vars.NetClient;
+import static mindustry.Vars.state;
+import static mindustry.Vars.netServer;
+import static mindustry.Vars.netClient;
 
 
 public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
