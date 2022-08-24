@@ -2,9 +2,10 @@ apply plugin: "java"
 
 version '1.0'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 8
+sourceCompatibility = JavaVersion.VERSION_17
 
-sourceSets.main.java.srcDirs = ["src"]
+sourceSets.main.java.srcDirs = ["src/main"]
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
@@ -30,7 +31,7 @@ jar{
         configurations.runtimeClasspath.collect{it.isDirectory() ? it : zipTree(it)}
     }
 
-    from(srcDirs){
+    from(rootDir){
         include "plugin.json"
     }
 }
