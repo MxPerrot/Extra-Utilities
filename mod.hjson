@@ -1,0 +1,17 @@
+{
+  "name": "extra-utilities",
+  "displayName": "Extra-Utilities",
+  "author": "Jojo",
+  
+  "description": 
+  '''
+  Do thing that don't work.
+  '''
+  
+  "version": "0.1 mod",
+  "minGameVersion": "137",
+  "hidden": true,
+  
+  "java": true,
+  "main": "extra.ExtraUtilitiesPlugin"
+}
