@@ -52,9 +52,6 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
     @Override
     public void registerClientCommands(CommandHandler handler) {
         handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
-            if (arg.length == 0) {
-                player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
-            }
             if (arg[0].equals("on") && state.serverPaused == false) {
                 if (state.serverPaused == false) {
                     state.serverPaused = true;
