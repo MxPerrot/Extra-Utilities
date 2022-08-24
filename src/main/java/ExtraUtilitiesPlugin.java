@@ -6,7 +6,6 @@ import arc.util.CommandHandler;
 import arc.util.Log;
 import arc.util.Timer;
 import arc.util.CommandHandler.CommandRunner;
-import arc.util.async.Threads;
 
 import mindustry.mod.Mod;
 import mindustry.game.EventType;
@@ -14,7 +13,9 @@ import mindustry.gen.Call;
 import mindustry.gen.Groups;
 import mindustry.gen.Player;
 import mindustry.net.Administration;
-import static mindustry.Vars;
+import static mindustry.Vars.Player;
+import static mindustry.Vars.NetServer;
+import static mindustry.Vars.NetClient;
 
 
 public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
@@ -25,21 +26,21 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
 
     public void init(){
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            if (state.serverPaused == false && Groups.player.size() == 0) {
-                state.serverPaused = true;
-                String message = Strings.format("[Auto-Pause] [green]ON");
+            if (Vars.state.serverPaused == false && Groups.player.size() == 0) {
+                Vars.state.serverPaused = true;
+                Call.sendMessage("[Auto-Pause] [green]ON");
             }
         });
         Events.on(EventType.PlayerJoin.class, e -> {
-            if (state.serverPaused == true && Groups.player.size() == 1) {
-                state.serverPaused = false;
-                String message = Strings.format("[Auto-Pause] [red]OFF");
+            if (Vars.state.serverPaused == true && Groups.player.size() == 1) {
+                Vars.state.serverPaused = false;
+                Call.sendMessage("[Auto-Pause] [red]OFF");
             }
         });
         Events.on(EventType.PlayerLeave.class, e -> {
-            if (state.serverPaused == false && Groups.player.size()-1 == 0) {
-                state.serverPaused = true;
-                String message = Strings.format("[Auto-Pause] [green]ON");
+            if (Vars.state.serverPaused == false && Groups.player.size()-1 == 0) {
+                Vars.state.serverPaused = true;
+                Call.sendMessage("[Auto-Pause] [green]ON");
             }
         });
     }
@@ -50,20 +51,16 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             if (arg.length == 0) {
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
             }
-            if (arg[0].equals("on")) {
-                if (state.serverPaused == false) {
-                    state.serverPaused = true;
-                    String message = Strings.format("[Pause] [green]ON");
-                }
+            if (arg[0].equals("on") && Vars.state.serverPaused == false) {
+                Vars.state.serverPaused = true;
+                Call.sendMessage("[Pause] [green]ON");
                 else {
                     player.sendMessage("[scarlet]Server is already paused.");
                 }
             }
-            if (arg[0].equals("off")){
-                if (state.serverPaused == true) {
-                    state.serverPaused = false;
-                    String message = Strings.format("[Pause] [red]OFF");
-                }
+            if (arg[0].equals("off") && Vars.state.serverPaused == true) {
+                    Vars.state.serverPaused = false;
+                    Call.sendMessage("[Pause] [red]OFF");
                 else {
                     player.sendMessage("[scarlet]Server is already unpaused.");
                 }
