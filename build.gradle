@@ -5,7 +5,7 @@ version '1.0'
 sourceCompatibility = 8
 sourceCompatibility = JavaVersion.VERSION_17
 
-sourceSets.main.java.srcDirs = ["src/main"]
+sourceSets.main.java.srcDirs = ["src/main/java"]
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
