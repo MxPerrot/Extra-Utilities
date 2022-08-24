@@ -1,6 +1,6 @@
 A little plugin that I made for a private server but feel free to use it. (Not working for some reason.)
 
-For now you can automatically pause the game when no one is connected and do `/pause on/off` in game.
+For now you can automatically pause the game when no one is connected and do `/pause on/off` in game. (Don't work obviously)
 
 
 ### Downloading
