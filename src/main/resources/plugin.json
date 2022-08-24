@@ -1,7 +1,8 @@
 {
-  "name": "Auto Pause",
+  "name": "extraUtilities",
+  "displayName": "Extra-Utilities",
   "author": "Jojo",
-  "main": "AutoPlugin",
-  "description": "A plugin that automatically pause your game when no one is connected.",
-  "version": "0.1"
+  "main": "ExtraUtilitiesPlugin",
+  "description": "A plugin that does thing.",
+  "version": "0.1 notworking"
 }
