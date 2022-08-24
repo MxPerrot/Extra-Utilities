@@ -74,7 +74,7 @@ public class AutoPlugin extends Plugin{
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
             }
             if (arg[0].equals("on")) {
-                if (Vars.state.ServerPaused == false) {
+                if (Vars.state.serverPaused == false) {
                     Vars.state.serverPaused = true;
                     String message = Strings.format("[Pause] [green]ON");
                 }
@@ -83,7 +83,7 @@ public class AutoPlugin extends Plugin{
                 }
             }
             if (arg[0].equals("off")){
-                if (Vars.state.ServerPaused == true) {
+                if (Vars.state.serverPaused == true) {
                     Vars.state.serverPaused = false;
                     String message = Strings.format("[Pause] [red]OFF");
                 }
