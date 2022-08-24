@@ -55,7 +55,7 @@ public class AutoPlugin extends Plugin{
             }
         });
         Events.on(EventType.PlayerJoin.class, event -> {
-            if (playerCount == 0 && Vars.state.serverPaused == false) {
+            if (playerCount == 0 && Vars.state.serverPaused == true) {
                 String message = Strings.format("[Auto-Pause] [red]OFF");
                 Vars.state.serverPaused = false;
             }
@@ -65,7 +65,7 @@ public class AutoPlugin extends Plugin{
             playerCount -= 1;
             if (playerCount == 0 && Vars.state.serverPaused == false) {
                 String message = Strings.format("[Auto-Pause] [green]ON");
-                Vars.state.serverPaused = false;
+                Vars.state.serverPaused = true;
             }
         });
     }
@@ -76,12 +76,22 @@ public class AutoPlugin extends Plugin{
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
             }
             if (arg[0].equals("on")) {
-                Vars.state.serverPaused = true;
-                String message = Strings.format("[Pause] [green]ON");
+                if (Vars.state.ServerPaused == false {
+                    Vars.state.serverPaused = true;
+                    String message = Strings.format("[Pause] [green]ON");
+                }
+                else {
+                    player.sendMessage("[scarlet]Server is already paused.");
+                }
             }
             if (arg[0].equals("off")){
-                Vars.state.serverPaused = false;
-                String message = Strings.format("[Pause] [red]OFF");
+                if (Vars.state.ServerPaused == true {
+                    Vars.state.serverPaused = false;
+                    String message = Strings.format("[Pause] [red]OFF);
+                }
+                else {
+                    player.sendMessage("[scarlet]Server is already unpaused.");
+                }
             }
         });
     } 
