@@ -41,7 +41,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             }
         });
         Events.on(EventType.PlayerLeave.class, e -> {
-            if (state.serverPaused == false && Groups.player.size()-1 == 0) {
+            if (state.serverPaused == false && Groups.player.size() == 0) {
                 state.serverPaused = true;
                 Log.info("The server was automatically paused");
                 Call.sendMessage("[Auto-Pause] [green]ON");
