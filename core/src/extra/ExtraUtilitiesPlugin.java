@@ -29,18 +29,21 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
         Events.on(EventType.WorldLoadEvent.class, e -> {
             if (state.serverPaused == false && Groups.player.size() == 0) {
                 state.serverPaused = true;
+                Log.info("The server was automatically paused");
                 Call.sendMessage("[Auto-Pause] [green]ON");
             }
         });
         Events.on(EventType.PlayerJoin.class, e -> {
             if (state.serverPaused == true && Groups.player.size() == 1) {
                 state.serverPaused = false;
+                Log.info("The server was automatically unpaused");
                 Call.sendMessage("[Auto-Pause] [red]OFF");
             }
         });
         Events.on(EventType.PlayerLeave.class, e -> {
             if (state.serverPaused == false && Groups.player.size()-1 == 0) {
                 state.serverPaused = true;
+                Log.info("The server was automatically paused");
                 Call.sendMessage("[Auto-Pause] [green]ON");
             }
         });
@@ -53,15 +56,19 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
                 player.sendMessage("[scarlet]Error: Argument 'on' or 'off' required.");
             }
             if (arg[0].equals("on") && state.serverPaused == false) {
-                state.serverPaused = true;
-                Call.sendMessage("[Pause] [green]ON");
+                if (state.serverPaused == false) {
+                    state.serverPaused = true;
+                    Call.sendMessage("[Pause] [green]ON");
+                }
             }
             else {
                 player.sendMessage("[scarlet]Server is already paused.");
             }
-            if (arg[0].equals("off") && state.serverPaused == true) {
-                state.serverPaused = false;
-                Call.sendMessage("[Pause] [red]OFF");
+            if (arg[0].equals("off")) {
+                if (state.serverPaused == true) {
+                    state.serverPaused = false;
+                    Call.sendMessage("[Pause] [red]OFF");
+                }
             }
             else {
                 player.sendMessage("[scarlet]Server is already unpaused.");
