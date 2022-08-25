@@ -29,22 +29,20 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
         Events.on(EventType.WorldLoadEvent.class, e -> {
             if (state.serverPaused == false && Groups.player.size() == 0) {
                 state.serverPaused = true;
-                Log.info("The server was automatically paused");
-                Call.sendMessage("[Auto-Pause] [green]ON");
+                Log.info("[E-U] |--> The server was automatically paused.");
             }
         });
         Events.on(EventType.PlayerJoin.class, e -> {
             if (state.serverPaused == true && Groups.player.size() == 1) {
                 state.serverPaused = false;
-                Log.info("The server was automatically unpaused");
-                Call.sendMessage("[Auto-Pause] [red]OFF");
+                Log.info("[E-U] |--> The server was automatically unpaused.");
+                Call.sendMessage("[#bebebe]Server was automatically [red]unpaused.");
             }
         });
         Events.on(EventType.PlayerLeave.class, e -> {
-            if (state.serverPaused == false && Groups.player.size() == 0) {
+            if (state.serverPaused == false && Groups.player.size()-1 == 0) {
                 state.serverPaused = true;
-                Log.info("The server was automatically paused");
-                Call.sendMessage("[Auto-Pause] [green]ON");
+                Log.info("[E-U] |--> The server was automatically paused.");
             }
         });
     }
@@ -52,23 +50,24 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
     @Override
     public void registerClientCommands(CommandHandler handler) {
         handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
-            if (arg[0].equals("on") && state.serverPaused == false) {
+            if (arg[0].equals("on")) {
                 if (state.serverPaused == false) {
                     state.serverPaused = true;
-                    Call.sendMessage("[Pause] [green]ON");
+                    Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + player ".");
+                }
+                else if (state.serverPaused == true) {
+                    player.sendMessage("[scarlet]Server is already paused.");
                 }
             }
-            else {
-                player.sendMessage("[scarlet]Server is already paused.");
-            }
+            
             if (arg[0].equals("off")) {
                 if (state.serverPaused == true) {
                     state.serverPaused = false;
-                    Call.sendMessage("[Pause] [red]OFF");
+                    Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + player ".");
                 }
-            }
-            else {
-                player.sendMessage("[scarlet]Server is already unpaused.");
+                else if (state.serverPaused == false) {
+                    player.sendMessage("[scarlet]Server is already unpaused.");
+                }
             }
         });
     }
