@@ -68,7 +68,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
                     player.sendMessage("[scarlet]Server is already unpaused.");
                 }
             }
-            if (!(arg[0].equals["on"] || arg[0].equals["off"])) {
+            if (!(arg[0].equals("on") || arg[0].equals("off"))) {
                 player.sendMessage("[scarlet]Need argument 'on' or 'off'.");
             }
         });
