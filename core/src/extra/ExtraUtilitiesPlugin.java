@@ -21,6 +21,8 @@ import static mindustry.Vars.netClient;
 
 public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
 
+    private Name = <player>.name;
+    
     public ExtraUtilitiesPlugin() {
         Log.info("|--> Extra-Utilities is loading...");
     }
@@ -53,7 +55,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             if (arg[0].equals("on")) {
                 if (state.serverPaused == false) {
                     state.serverPaused = true;
-                    Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + <player>.name + ".");
+                    Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + <Player>.name + ".");
                 }
                 else if (state.serverPaused == true) {
                     player.sendMessage("[scarlet]Server is already paused.");
@@ -63,7 +65,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             if (arg[0].equals("off")) {
                 if (state.serverPaused == true) {
                     state.serverPaused = false;
-                    Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + <player>.name + ".");
+                    Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + Name + ".");
                 }
                 else if (state.serverPaused == false) {
                     player.sendMessage("[scarlet]Server is already unpaused.");
