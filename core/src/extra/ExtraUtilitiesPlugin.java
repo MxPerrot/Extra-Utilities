@@ -36,7 +36,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             if (state.serverPaused == true && Groups.player.size() == 1) {
                 state.serverPaused = false;
                 Log.info("[E-U] |--> The server was automatically unpaused.");
-                Call.sendMessage("[#bebebe]Server was automatically [red]unpaused.");
+                Call.sendMessage("[#bebebe]Server was [red]unpaused.");
             }
         });
         Events.on(EventType.PlayerLeave.class, e -> {
@@ -53,7 +53,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             if (arg[0].equals("on")) {
                 if (state.serverPaused == false) {
                     state.serverPaused = true;
-                    Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + player + ".");
+                    Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + playerName + ".");
                 }
                 else if (state.serverPaused == true) {
                     player.sendMessage("[scarlet]Server is already paused.");
@@ -63,11 +63,14 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             if (arg[0].equals("off")) {
                 if (state.serverPaused == true) {
                     state.serverPaused = false;
-                    Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + player + ".");
+                    Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + playerName + ".");
                 }
                 else if (state.serverPaused == false) {
                     player.sendMessage("[scarlet]Server is already unpaused.");
                 }
+            }
+            else {
+                player.sendMesssge("[scarlet]Need argument 'on' or 'off'.");
             }
         });
     }
