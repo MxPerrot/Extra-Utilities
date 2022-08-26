@@ -18,10 +18,11 @@ public class EUClientCommands {
     while (running = true) {
         sleep(1000);
         s++;
-            while (s > 59) {
-                int s = (s - 60);
-                m++;
-            }
+        while (s > 59) {
+            int s = (s - 60);
+            m++;
+        }
+    }
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
     }
@@ -74,9 +75,9 @@ public class EUClientCommands {
             int s = 0;
             int m = 0;
         }
-        }
         if (!(arg[0].equals("start") || arg[0].equals("stop") || arg[0].equals("reset"))) {
             player.sendMessage("[scarlet]Need argument 'start', 'stop' or 'reset'");
+            return;
         }
     }
 }
