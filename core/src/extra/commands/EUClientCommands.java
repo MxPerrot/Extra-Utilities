@@ -47,6 +47,24 @@ public class EUClientCommands {
         }
     
     public static void timer(String[] args, Player player) {
-        player.sendMessage("Soon?");
+        float running = false;
+        int s = 0;
+        int m = 0;
+        while (running = true) {
+            sleep(1000);
+            s++;
+                while (s > 59) {
+                    s - 60;
+                    m++;
+                }
+                
+        if(arg[0].equals("start") && running == false {
+            float running = true;
+            setObjectives("[#bebebe]Timer :[#ffffff] \n" + m + ":" + s);
+            }
+        }
+        if (!(arg[0].equals("start") || arg[0].equals("stop") || arg[0].equals("reset")) {
+            player.sendMessage("[scarlet]Need argument 'start', 'stop' or 'reset'")
+        }
     }
 }
