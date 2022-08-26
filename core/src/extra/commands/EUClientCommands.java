@@ -20,7 +20,7 @@ public class EUClientCommands {
     }
     public static void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            boolean Running = false;
+            Running = false;
         });
     }
     
