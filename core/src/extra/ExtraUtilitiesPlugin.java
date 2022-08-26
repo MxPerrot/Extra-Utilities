@@ -49,8 +49,8 @@ public class ExtraUtilitiesPlugin extends Plugin {
        
         handler.<Player>register("timer", "<start/stop/reset>", "[time]", "Start a timer.", EUClientCommands::timer);
     }
-    @Override
+    /* @Override
     public void registerServerCommands (CommandHandler handler) {
         
-    }
+    } */
 }
