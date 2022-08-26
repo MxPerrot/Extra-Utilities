@@ -16,11 +16,11 @@ import static mindustry.Vars.netClient;
 public class EUClientCommands {
     public static void Command() {
         Log.info("E-U |--> Commands are loading...");
-        boolean Running running;
+        boolean Running;
     }
     public static void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            boolean Running running = false;
+            boolean Running = false;
         });
     }
     
@@ -54,25 +54,25 @@ public class EUClientCommands {
     
     public static void timer(String[] args, Player player) {
         if (args[0].equals("start")) {
-            if (Running running = false) {
-                Running running = true;
+            if (Running = false) {
+                Running = true;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (Running running = true) {
+            else if (Running = true) {
                 player.sendMessage("[scarlet]Timer is already running.");
             }
         }
         if (args[0].equals("stop")) {
-            if (Running running = true) {
-                Running running = false;
+            if (Running = true) {
+                Running = false;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (Running running = false) {
+            else if (Running = false) {
                 player.sendMessage("[scarlet]Timer is already stopped.");
             }
         }
         if (args[0].equals("reset")) {
-            Running running = false;
+            Running = false;
             player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             //player.sendMessage("[#bebebe]Timer was [blue]reset []by [#ffffff]" + player.name + ".");
         }
