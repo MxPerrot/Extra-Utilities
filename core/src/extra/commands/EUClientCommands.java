@@ -14,7 +14,7 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
-    public static void Command() {
+    public static void Command(String[] args) {
         boolean isTimerActive;
         Log.info("E-U |--> Commands are loading...");
     }
@@ -24,12 +24,12 @@ public class EUClientCommands {
         });
     }
     
-    public static void pause(String[] arg, Player player) {
+    public static void pause(String[] args, Player player) {
         if (!player.admin) {
             player.sendMessage("[scarlet] You must be admin.");
             return;
         }
-            if (arg[0].equals("on")) {
+            if (args[0].equals("on")) {
                 if (state.serverPaused == false) {
                     state.serverPaused = true;
                     Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + player.name + ".");
@@ -38,7 +38,7 @@ public class EUClientCommands {
                     player.sendMessage("[scarlet]Server is already paused.");
                 }
             }
-            if (arg[0].equals("off")) {
+            if (args[0].equals("off")) {
                 if (state.serverPaused == true) {
                     state.serverPaused = false;
                     Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + player.name + ".");
@@ -47,7 +47,7 @@ public class EUClientCommands {
                     player.sendMessage("[scarlet]Server is already unpaused.");
                 }
             }
-            if (!(arg[0].equals("on") || arg[0].equals("off"))) {
+            if (!(args[0].equals("on") || args[0].equals("off"))) {
                 player.sendMessage("[scarlet]Need argument 'on' or 'off'.");
             }
         }
