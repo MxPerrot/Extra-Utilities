@@ -14,13 +14,15 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
-    public static void Command(String[] args) {
-        boolean isTimerActive;
+    public static void main(String[] args) {
+        boolean isTimerActive = false;
+    }
+    public static void Command() {
         Log.info("E-U |--> Commands are loading...");
     }
     public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            boolean isTimerActive = false;
+            isTimerActive = false;
         });
     }
     
@@ -54,17 +56,17 @@ public class EUClientCommands {
     
     public static void timer(String[] args, Player player) {
         if (args[0].equals("start")) {
-            if (boolean.isTimerActive.equals(false)) {
-                boolean isTimerActive = true;
+            if (isTimerActive.equals(false)) {
+                isTimerActive = true;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (boolean.isTimerActive.equals(true)) {
+            else if (isTimerActive.equals(true)) {
                 player.sendMessage("[scarlet]Timer is already running.");
             }
         }
         if (args[0].equals("stop")) {
             if (isTimerActive.equals(true)) {
-                boolean isTimerActive = false;
+                isTimerActive = false;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
             else if (isTimerActive.equals(false)) {
@@ -72,7 +74,7 @@ public class EUClientCommands {
             }
         }
         if (args[0].equals("reset")) {
-            boolean isTimerActive = false;
+            isTimerActive = false;
             player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             //player.sendMessage("[#bebebe]Timer was [blue]reset []by [#ffffff]" + player.name + ".");
         }
