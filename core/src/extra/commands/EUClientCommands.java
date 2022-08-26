@@ -1,6 +1,5 @@
 package extra.commands;
 
-import java.util.*;
 import arc.*;
 import arc.func.*;
 import arc.util.*;
@@ -23,7 +22,7 @@ public class EUClientCommands {
         Log.info("E-U |--> Commands are loading...");
         
         while (running = true) {
-            sleep(1000);
+            Thread.sleep(1000);
             s++;
             while (s > 59) {
                 float static s = (s - 60);
