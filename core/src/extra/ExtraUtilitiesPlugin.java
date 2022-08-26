@@ -1,7 +1,16 @@
 package extra;
 
+import arc.*;
 import arc.util.*;
-import extra.Commands;
+import mindustry.core.*;
+import mindustry.game.*;
+import mindustry.gen.*;
+import mindustry.mod.*;
+import mindustry.net.*;
+import static mindustry.Vars.state;
+import static mindustry.Vars.netServer;
+import static mindustry.Vars.netClient;
+import extra.*;
 
 public class ExtraUtilitiesPlugin extends Plugin {
     public ExtraUtilitiesPlugin() {
