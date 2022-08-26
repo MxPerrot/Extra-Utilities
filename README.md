@@ -1,9 +1,34 @@
-A little plugin that I made for a private server but feel free to use it.
-For now you can automatically pause the game when no one is connected and do `/pause on/off` in game.
+[![Build](https://github.com/JojoFR1/Extra-Utilities/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/JojoFR1/Extra-Utilities/actions/workflows/build.yml)
+
+A **Java plugin** for Mindustry server, *created by a french man*, that is still new and in development.
+
+This plugin will be developed when I have free time, so development is going to be slow !
 
 
-### Downloading
+- - -
+## COMMAND/FUNCTIONALITIES
 
-Go to the [Action](https://github.com/JojoFR1/Auto-Pause/actions) Tab and download the latest checked version.
+- `/pause` <on/off> : Pause/Unpause the game. (In-game command)
+- [ ] `/timer` <start/stop/reset> [time] : Start a timer or start a countdown.
 
-When downloaded, unzip it and place the plugin in your server folder `(SERVER)/config/mods`.
+- Auto-pause : The server is automatically pause when no one is connected.
+
+- - -
+## BUGS TO FIX
+
+None
+
+- - -
+## NEXT UPDATE
+
+### v0.2
+- A timer/countdown command/feature.
+- `/pause` now only for **admin**.
+- ...
+
+- - -
+## CHANGELOG
+
+### v0.1
+- [X] Add `/pause`.
+- [X] Add Auto-Pause.
