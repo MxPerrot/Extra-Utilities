@@ -13,7 +13,8 @@ import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
-public class EUClientCommands {
+public static class EUClientCommands {
+    boolean running;
     
     public static void Command() {
         Log.info("E-U |--> Commands are loading...");
