@@ -18,8 +18,11 @@ public class EUClientCommands {
         Log.info("E-U |--> Commands are loading...");
     }
     
-    public static String pause (String[] arg, Player player) {
-        if (player.admin) {
+    public static void pause (String[] arg, Player player) {
+        if (!player.admin) {
+            player.sendMessage("[scarlet] You must be admin.");
+            return;
+        }
             if (arg[0].equals("on")) {
                 if (state.serverPaused == false) {
                     state.serverPaused = true;
@@ -42,13 +45,9 @@ public class EUClientCommands {
                 player.sendMessage("[scarlet]Need argument 'on' or 'off'.");
             }
         }
-        else {
-            player.sendMessage("[scarlet] You must be admin.");
-        }
-        return;
     }
     
-    public static String timer (String[] args, Player player) {
-        return;
+    public static void timer (String[] args, Player player) {
+        player.sendMessage("Soon?");
     }
 }
