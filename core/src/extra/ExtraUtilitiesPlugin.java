@@ -75,4 +75,7 @@ public class ExtraUtilitiesPlugin extends mindustry.mod.Plugin {
             }
         });
     }
+    public void loadContent() {
+        new Commands().load();
+    }
 }
