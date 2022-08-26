@@ -18,7 +18,7 @@ public class ExtraUtilitiesPlugin extends Plugin {
     }
     public void init() {
         
-        EUCommands.init(); //Init commands.
+        EUCommands.load(); //Load commands.
         
         //TODO Remove after official update
         Events.on(EventType.WorldLoadEvent.class, e -> {
