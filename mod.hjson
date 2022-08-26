@@ -8,7 +8,7 @@
   Add some commands and functionalities.
   '''
   
-  "version": "0.2",
+  "version": "0.2 beta",
   "minGameVersion": "137",
   "hidden": true,
   
