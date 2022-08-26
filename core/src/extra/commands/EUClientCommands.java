@@ -14,8 +14,23 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
+    
+    while (running = true) {
+        sleep(1000);
+        s++;
+            while (s > 59) {
+                int s = (s - 60);
+                m++;
+            }
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
+    }
+    public void init() {
+        Events.on(EventType.WorldLoadEvent.class, e -> {
+            float running = false;
+            int s = 0;
+            int m = 0;
+        }
     }
     
     public static void pause(String[] arg, Player player) {
@@ -47,24 +62,21 @@ public class EUClientCommands {
         }
     
     public static void timer(String[] args, Player player) {
-        float running = false;
-        int s = 0;
-        int m = 0;
-        while (running = true) {
-            sleep(1000);
-            s++;
-                while (s > 59) {
-                    s - 60;
-                    m++;
-                }
-                
-        if(arg[0].equals("start") && running == false {
+        if (arg[0].equals("start") && running == false) {
             float running = true;
             setObjectives("[#bebebe]Timer :[#ffffff] \n" + m + ":" + s);
             }
+        if (arg[0].equals("stop") && running == true) {
+            float running = false;
         }
-        if (!(arg[0].equals("start") || arg[0].equals("stop") || arg[0].equals("reset")) {
-            player.sendMessage("[scarlet]Need argument 'start', 'stop' or 'reset'")
+        if (arg[0].equals("reset")) {
+            float running = false;
+            int s = 0;
+            int m = 0;
+        }
+        }
+        if (!(arg[0].equals("start") || arg[0].equals("stop") || arg[0].equals("reset"))) {
+            player.sendMessage("[scarlet]Need argument 'start', 'stop' or 'reset'");
         }
     }
 }
