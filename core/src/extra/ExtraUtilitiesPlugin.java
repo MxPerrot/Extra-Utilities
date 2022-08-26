@@ -18,7 +18,7 @@ public class ExtraUtilitiesPlugin extends Plugin {
     }
     public void init() {
         
-        EUCommands().init(); //Init commands.
+        EUCommands.init(); //Init commands.
         
         //TODO Remove after official update
         Events.on(EventType.WorldLoadEvent.class, e -> {
@@ -40,5 +40,6 @@ public class ExtraUtilitiesPlugin extends Plugin {
                 Log.info("[E-U] |--> The server was automatically paused.");
             }
         });
+        Log.info("|--> EExtra-Utilities loaded!");
     }
 }
