@@ -17,9 +17,9 @@ public class EUClientCommands {
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
     }
-    public void init() {
+    public static void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            Running running = false;
+            boolean running = false;
         });
     }
     
