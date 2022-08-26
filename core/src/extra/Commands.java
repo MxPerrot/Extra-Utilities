@@ -1,18 +1,13 @@
 package extra.commands;
 
-import arc.Events;
-import arc.func.Cons;
-import arc.util.CommandHandler;
-import arc.util.Log;
-import arc.util.Timer;
-import arc.util.CommandHandler.CommandRunner;
+import arc.*;
+import arc.func.*;
+import arc.util.*;
+import mindustry.core.*;
+import mindustry.game.*;
+import mindustry.gen.*;
 import mindustry.mod.*;
-import mindustry.game.EventType;
-import mindustry.core.GameState;
-import mindustry.gen.Call;
-import mindustry.gen.Groups;
-import mindustry.gen.Player;
-import mindustry.net.Administration;
+import mindustry.net.*;
 import static mindustry.Vars.player;
 import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
