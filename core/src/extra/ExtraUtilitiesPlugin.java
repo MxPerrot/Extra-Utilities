@@ -12,7 +12,7 @@ import static mindustry.Vars.player;
 import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
-import extra.commands.EUClientCommands.*;
+import extra.commands.*;
 
 public class ExtraUtilitiesPlugin extends Plugin {
     public static void ExtraUtilitiesPlugin() {
