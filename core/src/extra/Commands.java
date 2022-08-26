@@ -19,12 +19,12 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class Commands {
-    public Command {
+    public Command() {
         
     }
     public void load() {
         
-        public void init(){
+        public void init() {
             //TODO Remove after official update
             Events.on(EventType.WorldLoadEvent.class, e -> {
                 if (state.serverPaused == false && Groups.player.size() == 0) {
