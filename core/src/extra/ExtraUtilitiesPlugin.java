@@ -12,10 +12,10 @@ import static mindustry.Vars.player;
 import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
-import extra.commands.EUClientCommands;
+import extra.commands.EUClientCommands.*;
 
 public class ExtraUtilitiesPlugin extends Plugin {
-    public ExtraUtilitiesPlugin() {
+    public static void ExtraUtilitiesPlugin() {
         Log.info("|--> Extra-Utilities is loading...");
     }
     public void init() {
