@@ -39,12 +39,7 @@ public class ExtraUtilitiesPlugin extends Plugin {
         });
     }
     
-    @Override
-    public void registerClientCommands(final CommandHandler handler) {
-        command.registerClientCommands(handler);
-    }
-    @Override
-    public void registerServerCommands(final CommandHandler handler} {
-        command.registerServerCommands(handler);
+    public void loadContent() {
+        new.EUCommands().load();
     }
 }
