@@ -54,25 +54,25 @@ public class EUClientCommands {
     
     public static void timer(String[] args, Player player) {
         if (args[0].equals("start")) {
-            if (Running = false) {
-                Running = true;
+            if (isTimerActive == false) {
+                isTimerActive = true;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (Running = true) {
+            else if (isTimerActive == true) {
                 player.sendMessage("[scarlet]Timer is already running.");
             }
         }
         if (args[0].equals("stop")) {
-            if (Running = true) {
-                Running = false;
+            if (isTimerActive == true) {
+                isTimerActive = false;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (Running = false) {
+            else if (isTimerActive == false) {
                 player.sendMessage("[scarlet]Timer is already stopped.");
             }
         }
         if (args[0].equals("reset")) {
-            Running = false;
+            isTimerActive = false;
             player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             //player.sendMessage("[#bebebe]Timer was [blue]reset []by [#ffffff]" + player.name + ".");
         }
