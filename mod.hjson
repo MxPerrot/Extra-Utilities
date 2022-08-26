@@ -5,10 +5,10 @@
   
   "description": 
   '''
-  Do thing that don't work.
+  Add some commands and functionalities.
   '''
   
-  "version": "0.1 mod",
+  "version": "0.2",
   "minGameVersion": "137",
   "hidden": true,
   
