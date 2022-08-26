@@ -14,8 +14,8 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
-    public static boolean isTimerActive(false);
     public static void Command() {
+        boolean isTimerActive(false);
         Log.info("E-U |--> Commands are loading...");
     }
     public void init() {
