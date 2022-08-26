@@ -14,27 +14,12 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
-    boolean running static Running running = false;
-    float s static Second s = 0;
-    float m static Minute m = 0;
-            
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
-        
-        while (running = true) {
-            Thread.sleep(1000);
-            s++;
-            while (s > 59) {
-                float s = (s - 60);
-                m++;
-            }
-        }
     }
     public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            boolean running = false;
-            float s = 0;
-            float m = 0;
+            static boolean running = false
         });
     }
     
@@ -67,17 +52,28 @@ public class EUClientCommands {
         }
     
     public static void timer(String[] args, Player player) {
-        if (args[0].equals("start") && running == false) {
-            boolean running = true;
-            setObjectives("[#bebebe]Timer :[#ffffff] \n" + m + ":" + s);
+        if (args[0].equals("start")) {
+            if (running = false) {
+                running = true;
+                player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
+            else if (running = true) {
+                player.sendMessage("[scarlet]Timer is already running.")
+            }
+        }
         if (args[0].equals("stop") && running == true) {
-            boolean running = false;
+            if (running = true) {
+                running = false;
+                player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
+            }
+            else if (running = false) {
+                player.sendMessage("[scarlet]Timer is already stopped.")
+            }
         }
         if (args[0].equals("reset")) {
-            boolean running = false;
-            float s = 0;
-            float m = 0;
+            running= false;
+            player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
+            //player.sendMessage("[#bebebe]Timer was [blue]reset []by [#ffffff]" + player.name + ".");
         }
         if (!(args[0].equals("start") || args[0].equals("stop") || args[0].equals("reset"))) {
             player.sendMessage("[scarlet]Need argument 'start', 'stop' or 'reset'");
