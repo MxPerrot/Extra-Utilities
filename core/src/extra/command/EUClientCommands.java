@@ -1,4 +1,4 @@
-package extra.commands;
+package extra.commands.client;
 
 import arc.*;
 import arc.func.*;
@@ -13,12 +13,12 @@ import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
-public class EUCommands {
+public class EUClientCommands {
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
     }
     
-    public static String pause (String[] args, Player player) {
+    public static String pause (String[] arg, Player player) {
         if (player.admin) {
             if (arg[0].equals("on")) {
                 if (state.serverPaused == false) {
