@@ -49,6 +49,6 @@ public class EUClientCommands {
     }
     
     public static String timer (String[] args, Player player) {
-        
+        return;
     }
 }
