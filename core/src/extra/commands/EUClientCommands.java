@@ -14,24 +14,24 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
-    
-    while (running = true) {
-        sleep(1000);
-        s++;
-        while (s > 59) {
-            int s = (s - 60);
-            m++;
-        }
-    }
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
+        
+        while (running = true) {
+            sleep(1000);
+            s++;
+            while (s > 59) {
+                int s = (s - 60);
+                m++;
+            }
+        }
     }
     public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
             float running = false;
             int s = 0;
             int m = 0;
-        }
+        });
     }
     
     public static void pause(String[] arg, Player player) {
