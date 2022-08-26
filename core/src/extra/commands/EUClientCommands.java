@@ -14,6 +14,8 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
+    boolean running;
+    
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
     }
@@ -71,7 +73,7 @@ public class EUClientCommands {
             }
         }
         if (args[0].equals("reset")) {
-            running= false;
+            running = false;
             player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             //player.sendMessage("[#bebebe]Timer was [blue]reset []by [#ffffff]" + player.name + ".");
         }
