@@ -7,10 +7,11 @@ import mindustry.game.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.net.*;
+import static mindustry.Vars.player;
 import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
-import extra.command.EUClientCommands;
+import extra.commands.EUClientCommands;
 
 public class ExtraUtilitiesPlugin extends Plugin {
     public ExtraUtilitiesPlugin() {
