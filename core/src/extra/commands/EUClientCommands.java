@@ -25,16 +25,16 @@ public class EUClientCommands {
             Thread.sleep(1000);
             s++;
             while (s > 59) {
-                float static s = (s - 60);
+                float s = (s - 60);
                 m++;
             }
         }
     }
     public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            boolean static running = false;
-            float static s = 0;
-            float static m = 0;
+            boolean running = false;
+            float s = 0;
+            float m = 0;
         });
     }
     
@@ -68,16 +68,16 @@ public class EUClientCommands {
     
     public static void timer(String[] args, Player player) {
         if (args[0].equals("start") && running == false) {
-            boolean static running = true;
+            boolean running = true;
             setObjectives("[#bebebe]Timer :[#ffffff] \n" + m + ":" + s);
             }
         if (args[0].equals("stop") && running == true) {
-            boolean static running = false;
+            boolean running = false;
         }
         if (args[0].equals("reset")) {
             boolean running = false;
-            float static s = 0;
-            float static m = 0;
+            float s = 0;
+            float m = 0;
         }
         if (!(args[0].equals("start") || args[0].equals("stop") || args[0].equals("reset"))) {
             player.sendMessage("[scarlet]Need argument 'start', 'stop' or 'reset'");
