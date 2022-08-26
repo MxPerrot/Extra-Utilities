@@ -45,7 +45,6 @@ public class EUClientCommands {
                 player.sendMessage("[scarlet]Need argument 'on' or 'off'.");
             }
         }
-    }
     
     public static void timer(String[] args, Player player) {
         player.sendMessage("Soon?");
