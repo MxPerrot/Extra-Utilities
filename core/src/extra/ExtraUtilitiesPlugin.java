@@ -17,6 +17,9 @@ public class ExtraUtilitiesPlugin extends Plugin {
         Log.info("|--> Extra-Utilities is loading...");
     }
     public void init() {
+        
+        EUCommands().init(); //Init commands.
+        
         //TODO Remove after official update
         Events.on(EventType.WorldLoadEvent.class, e -> {
             if (state.serverPaused == false && Groups.player.size() == 0) {
@@ -37,9 +40,5 @@ public class ExtraUtilitiesPlugin extends Plugin {
                 Log.info("[E-U] |--> The server was automatically paused.");
             }
         });
-    }
-    
-    public void loadContent() {
-        new EUCommands().load();
     }
 }
