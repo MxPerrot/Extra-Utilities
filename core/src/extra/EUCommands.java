@@ -17,6 +17,9 @@ public class EUCommands {
     public void Command() {
         Log.info("E-U |--> Commands loaded.");
     }
+    public static void init() {
+        canLoad = true
+    }
     
     public void registerClientCommands(CommandHandler handler) {
         handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
