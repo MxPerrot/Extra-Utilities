@@ -15,9 +15,9 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
-    boolean running = false;
-    float s = 0;
-    float m = 0;
+    boolean static running = false;
+    float static s = 0;
+    float static m = 0;
             
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
@@ -26,16 +26,16 @@ public class EUClientCommands {
             sleep(1000);
             s++;
             while (s > 59) {
-                float s = (s - 60);
+                float static s = (s - 60);
                 m++;
             }
         }
     }
     public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            boolean running = false;
-            float s = 0;
-            float m = 0;
+            boolean static running = false;
+            float static s = 0;
+            float static m = 0;
         });
     }
     
@@ -69,16 +69,16 @@ public class EUClientCommands {
     
     public static void timer(String[] args, Player player) {
         if (args[0].equals("start") && running == false) {
-            boolean running = true;
+            boolean static running = true;
             setObjectives("[#bebebe]Timer :[#ffffff] \n" + m + ":" + s);
             }
         if (args[0].equals("stop") && running == true) {
-            boolean running = false;
+            boolean static running = false;
         }
         if (args[0].equals("reset")) {
             boolean running = false;
-            int s = 0;
-            int m = 0;
+            float static s = 0;
+            float static m = 0;
         }
         if (!(args[0].equals("start") || args[0].equals("stop") || args[0].equals("reset"))) {
             player.sendMessage("[scarlet]Need argument 'start', 'stop' or 'reset'");
