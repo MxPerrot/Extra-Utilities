@@ -18,7 +18,7 @@ public class EUClientCommands {
         Log.info("E-U |--> Commands are loading...");
     }
     
-    public static void pause (String[] arg, Player player) {
+    public static void pause(String[] arg, Player player) {
         if (!player.admin) {
             player.sendMessage("[scarlet] You must be admin.");
             return;
@@ -47,7 +47,7 @@ public class EUClientCommands {
         }
     }
     
-    public static void timer (String[] args, Player player) {
+    public static void timer(String[] args, Player player) {
         player.sendMessage("Soon?");
     }
 }
