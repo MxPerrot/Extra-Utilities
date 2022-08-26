@@ -19,7 +19,7 @@ public class EUCommands {
     }
 
     public void load() {
-        public void registerClientCommands(CommandHandler handler) {
+        private void registerClientCommands(CommandHandler handler) {
             handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
                 if (arg[0].equals("on")) {
                     if (state.serverPaused == false) {
@@ -45,7 +45,7 @@ public class EUCommands {
             });
         }
         
-        public void registerServerCommands(final CommandHandler handler) {
+        public void registerServerCommands(CommandHandler handler) {
             
         }
     }
