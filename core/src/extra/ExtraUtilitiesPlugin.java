@@ -40,6 +40,6 @@ public class ExtraUtilitiesPlugin extends Plugin {
     }
     
     public void loadContent() {
-        new.EUCommands().load();
+        new EUCommands().load();
     }
 }
