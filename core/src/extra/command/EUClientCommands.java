@@ -17,9 +17,9 @@ public class EUCommands {
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
     }
-    public static void load() {
-    public void registerClientCommands(CommandHandler handler) {
-        handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
+    
+    public static String pause (String[] args, Player player) {
+        if (player.admin) {
             if (arg[0].equals("on")) {
                 if (state.serverPaused == false) {
                     state.serverPaused = true;
@@ -41,11 +41,13 @@ public class EUCommands {
             if (!(arg[0].equals("on") || arg[0].equals("off"))) {
                 player.sendMessage("[scarlet]Need argument 'on' or 'off'.");
             }
-        });
+        }
+        else {
+            player.sendMessage("[scarlet] You must be admin.");
+        }
     }
     
-    public void registerServerCommands(CommandHandler handler) {
+    public static String timer (String[] args, Player player) {
         
-    }
     }
 }
