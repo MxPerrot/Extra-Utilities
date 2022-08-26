@@ -1,4 +1,4 @@
-package extra.commands.client;
+package extra.commands;
 
 import arc.*;
 import arc.func.*;
