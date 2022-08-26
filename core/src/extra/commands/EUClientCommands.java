@@ -58,7 +58,7 @@ public class EUClientCommands {
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
             else if (running = true) {
-                player.sendMessage("[scarlet]Timer is already running.")
+                player.sendMessage("[scarlet]Timer is already running.");
             }
         }
         if (args[0].equals("stop") && running == true) {
@@ -67,7 +67,7 @@ public class EUClientCommands {
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
             else if (running = false) {
-                player.sendMessage("[scarlet]Timer is already stopped.")
+                player.sendMessage("[scarlet]Timer is already stopped.");
             }
         }
         if (args[0].equals("reset")) {
