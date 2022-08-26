@@ -17,35 +17,34 @@ public class EUCommands {
     public void load() {
         Log.info("E-U |--> Commands loaded.");
 
-    public void registerClientCommands(CommandHandler handler) {
-        handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
-            if (arg[0].equals("on")) {
-                if (state.serverPaused == false) {
-                    state.serverPaused = true;
-                    Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + player.name + ".");
+        public void registerClientCommands(CommandHandler handler) {
+            handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
+                if (arg[0].equals("on")) {
+                    if (state.serverPaused == false) {
+                        state.serverPaused = true;
+                        Call.sendMessage("[#bebebe]Server [green]paused [#bebebe]by [#ffffff] " + player.name + ".");
+                    }
+                    else if (state.serverPaused == true) {
+                        player.sendMessage("[scarlet]Server is already paused.");
+                    }
                 }
-                else if (state.serverPaused == true) {
-                    player.sendMessage("[scarlet]Server is already paused.");
+                if (arg[0].equals("off")) {
+                    if (state.serverPaused == true) {
+                        state.serverPaused = false;
+                        Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + player.name + ".");
+                    }
+                    else if (state.serverPaused == false) {
+                        player.sendMessage("[scarlet]Server is already unpaused.");
+                    }
                 }
-            }
-            if (arg[0].equals("off")) {
-                if (state.serverPaused == true) {
-                    state.serverPaused = false;
-                    Call.sendMessage("[#bebebe]Server [red]unpaused [#bebebe]by [#ffffff] " + player.name + ".");
+                if (!(arg[0].equals("on") || arg[0].equals("off"))) {
+                    player.sendMessage("[scarlet]Need argument 'on' or 'off'.");
                 }
-                else if (state.serverPaused == false) {
-                    player.sendMessage("[scarlet]Server is already unpaused.");
-                }
-            }
-            if (!(arg[0].equals("on") || arg[0].equals("off"))) {
-                player.sendMessage("[scarlet]Need argument 'on' or 'off'.");
-            }
-        });
-    }
-    
-    public void registerServerCommands(CommandHandler handler) {
+            });
+        }
         
-    }
-    
+        public void registerServerCommands(CommandHandler handler) {
+            
+        }
     }
 }
