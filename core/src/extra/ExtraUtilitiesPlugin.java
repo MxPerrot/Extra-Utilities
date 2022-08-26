@@ -20,12 +20,12 @@ public class ExtraUtilitiesPlugin extends Plugin {
     }
     public void init() {
         
-        Log.info(
+        Log.info{
             "Extra-Utilities | CHANGELOG 0.2 beta"
             "- /pause requires admin role"
             "- Add /timer start/stop/reset"
             "- ..."
-            );
+            };
         //TODO Remove after official update
         Events.on(EventType.WorldLoadEvent.class, e -> {
             if (state.serverPaused == false && Groups.player.size() == 0) {
