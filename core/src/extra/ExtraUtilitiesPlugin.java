@@ -40,6 +40,6 @@ public class ExtraUtilitiesPlugin extends Plugin {
                 Log.info("[E-U] |--> The server was automatically paused.");
             }
         });
-        Log.info("|--> EExtra-Utilities loaded!");
+        Log.info("|--> Extra-Utilities loaded!");
     }
 }
