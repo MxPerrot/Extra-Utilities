@@ -18,7 +18,7 @@ public class EUCommands {
         Log.info("E-U |--> Commands loaded.");
     }
     public static void init() {
-        canLoad = true
+        canLoad = true;
     }
     
     public void registerClientCommands(CommandHandler handler) {
