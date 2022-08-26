@@ -13,11 +13,12 @@ import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
-public class Commands {
+public class EUCommands {
     public Command() {
         Log.info("E-U |--> Commands loaded.");
     }
-
+    
+    @Override
     public void registerClientCommands(final CommandHandler handler) {
         handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", (arg, player) -> {
             if (arg[0].equals("on")) {
@@ -43,7 +44,8 @@ public class Commands {
             }
         });
     }
-
+    
+    @Override
     public void registerServerCommands(final CommandHandler handler) {
         
     }
