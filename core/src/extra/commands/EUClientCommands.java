@@ -16,11 +16,11 @@ import static mindustry.Vars.netClient;
 public class EUClientCommands {
     public static void Command() {
         Log.info("E-U |--> Commands are loading...");
-        String Running;
+        boolean isTimerActive = false;
     }
-    public static void init() {
+    public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            Running = false;
+            isTimerActive = false;
         });
     }
     
