@@ -63,7 +63,7 @@ public class EUClientCommands {
             }
         }
         if (args[0].equals("stop")) {
-            if (isTimerActive.equals(true)) {
+            if (boolean isTimerActive.equals(true)) {
                 boolean isTimerActive = false;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
