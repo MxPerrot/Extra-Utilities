@@ -14,14 +14,13 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
-    boolean running;
-    
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
+        boolean Running running;
     }
-    public void init() {
+    public static void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            boolean running = false;
+            boolean Running running = false;
         });
     }
     
@@ -53,27 +52,27 @@ public class EUClientCommands {
             }
         }
     
-    public void timer(String[] args, Player player) {
+    public static void timer(String[] args, Player player) {
         if (args[0].equals("start")) {
-            if (running = false) {
-                running = true;
+            if (Running running = false) {
+                Running running = true;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (running = true) {
+            else if (Running running = true) {
                 player.sendMessage("[scarlet]Timer is already running.");
             }
         }
-        if (args[0].equals("stop") && running == true) {
-            if (running = true) {
-                running = false;
+        if (args[0].equals("stop")) {
+            if (Running running = true) {
+                Running running = false;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (running = false) {
+            else if (Running running = false) {
                 player.sendMessage("[scarlet]Timer is already stopped.");
             }
         }
         if (args[0].equals("reset")) {
-            running = false;
+            Running running = false;
             player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             //player.sendMessage("[#bebebe]Timer was [blue]reset []by [#ffffff]" + player.name + ".");
         }
