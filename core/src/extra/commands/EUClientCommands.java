@@ -1,5 +1,6 @@
 package extra.commands;
 
+import java.util.*;
 import arc.*;
 import arc.func.*;
 import arc.util.*;
@@ -14,6 +15,10 @@ import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
 public class EUClientCommands {
+    boolean running = false;
+    float s = 0;
+    float m = 0;
+            
     public void Command() {
         Log.info("E-U |--> Commands are loading...");
         
