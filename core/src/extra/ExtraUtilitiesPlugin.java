@@ -10,16 +10,13 @@ import mindustry.net.*;
 import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
-import extra.*;
+import extra.command.EUClientCommands;
 
 public class ExtraUtilitiesPlugin extends Plugin {
     public ExtraUtilitiesPlugin() {
         Log.info("|--> Extra-Utilities is loading...");
     }
     public void init() {
-        
-        EUCommands.load(); //Load commands.
-        
         //TODO Remove after official update
         Events.on(EventType.WorldLoadEvent.class, e -> {
             if (state.serverPaused == false && Groups.player.size() == 0) {
@@ -41,5 +38,17 @@ public class ExtraUtilitiesPlugin extends Plugin {
             }
         });
         Log.info("|--> Extra-Utilities loaded!");
+    }
+    
+    @Override
+    public void registerClientCommands (CommandHandler handler) {
+        
+        handler.<Player>register("pause", "<on/off>", "Pause/Unpause the game.", EUClientCommands::pause);
+       
+        handler.<player>register("timer", "<start/stop/reset>", "[time]", "Start a timer.", (EUClientCommands::timer);
+    }
+    @Override
+    public void registerServerCommands (CommandHandler handler) {
+        
     }
 }
