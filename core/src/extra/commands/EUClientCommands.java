@@ -20,7 +20,7 @@ public class EUClientCommands {
     }
     public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
-            isTimerActive = false;
+            boolean isTimerActive = false;
         });
     }
     
@@ -54,25 +54,25 @@ public class EUClientCommands {
     
     public static void timer(String[] args, Player player) {
         if (args[0].equals("start")) {
-            if (isTimerActive == false) {
-                isTimerActive = true;
+            if (isTimerActive.equals(false)) {
+                boolean isTimerActive = true;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (isTimerActive == true) {
+            else if (isTimerActive.equals(true)) {
                 player.sendMessage("[scarlet]Timer is already running.");
             }
         }
         if (args[0].equals("stop")) {
-            if (isTimerActive == true) {
-                isTimerActive = false;
+            if (isTimerActive.equals(true)) {
+                boolean isTimerActive = false;
                 player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             }
-            else if (isTimerActive == false) {
+            else if (isTimerActive.equals(false)) {
                 player.sendMessage("[scarlet]Timer is already stopped.");
             }
         }
         if (args[0].equals("reset")) {
-            isTimerActive = false;
+            boolean isTimerActive = false;
             player.sendMessage("[#bebebe]T'a vraiment cru ça allait marcher ? :heee:");
             //player.sendMessage("[#bebebe]Timer was [blue]reset []by [#ffffff]" + player.name + ".");
         }
