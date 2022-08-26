@@ -13,13 +13,13 @@ import static mindustry.Vars.state;
 import static mindustry.Vars.netServer;
 import static mindustry.Vars.netClient;
 
-public static class EUClientCommands {
+public class EUClientCommands {
     boolean running;
     
-    public static void Command() {
+    public void Command() {
         Log.info("E-U |--> Commands are loading...");
     }
-    public static void init() {
+    public void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
             boolean running = false;
         });
@@ -53,7 +53,7 @@ public static class EUClientCommands {
             }
         }
     
-    public static void timer(String[] args, Player player) {
+    public void timer(String[] args, Player player) {
         if (args[0].equals("start")) {
             if (running = false) {
                 running = true;
