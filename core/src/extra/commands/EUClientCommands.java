@@ -16,7 +16,7 @@ import static mindustry.Vars.netClient;
 public class EUClientCommands {
     public static void Command() {
         Log.info("E-U |--> Commands are loading...");
-        boolean Running;
+        String Running;
     }
     public static void init() {
         Events.on(EventType.WorldLoadEvent.class, e -> {
